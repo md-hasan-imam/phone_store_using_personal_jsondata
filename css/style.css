@@ -12,6 +12,21 @@ ul{
     font-weight: 700;
 }
 
+#search-field{
+    height: 40px;
+}
+
+#search{
+    height: 40px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px solid #cecdcd;
+}
+
+.input-group .btn:focus,#search-field {
+    outline: none;
+    box-shadow: none;
+}
 .feature-title{
     font-size: 16px;
 }
@@ -41,8 +56,6 @@ span{
     -moz-transition: all linear .4s;
     -ms-transition: all linear .4s;
     -o-transition: all linear .4s;
-}
-.custom-card{
 }
 .card-image{
     border-radius: 25px;

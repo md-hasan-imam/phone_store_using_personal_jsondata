@@ -5,6 +5,8 @@ const searchPhone = () => {
     const searchText = searchField.value;
     const searchLowerText = searchText.toLowerCase();
     searchField.value = '';
+    const productDetilsField = document.getElementById('phone-details')
+    productDetilsField.textContent = '';
 
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchLowerText}`
     fetch(url)
@@ -18,25 +20,35 @@ const searchPhone = () => {
 const displayResults = phones => {
     const resultsField = document.getElementById('display-phones');
     resultsField.textContent='';
-    phones.forEach(phone => {
-        const div = document.createElement('div');
-        div.classList.add('col');
-        div.innerHTML = `
-            <div class="card h-100 w-75 mx-auto p-3 custom-card">
-                    <img src="${phone.image}" class="card-image card-img-top w-75 mx-auto" alt="...">
-                <div>
-                    <div class="card-body">
-                            <h4 class="card-title">${phone.phone_name}</h4>
-                            <p class="card-text">${phone.brand}</p>
-                        <div class='text-end'>
-                            <button class='custom-button' onclick="loadPhoneDetails('${phone.slug}')">View Details</button>  
+    if(phones.length == 0){
+        const errorField = document.getElementById('error-message');
+        errorField.innerText="*** Opps! No result found. Please! Search Again ***";
+        errorField.style.color='tomato';
+        errorField.style.display="block"
+    }else{
+        const errorField = document.getElementById('error-message');
+        errorField.style.display="none";
+        phones.forEach(phone => {
+            const div = document.createElement('div');
+            div.classList.add('col');
+            div.innerHTML = `
+                <div class="card h-100 w-75 mx-auto p-3 custom-card">
+                        <img src="${phone.image}" class="card-image card-img-top w-75 mx-auto" alt="...">
+                    <div>
+                        <div class="card-body">
+                                <h4 class="card-title">${phone.phone_name}</h4>
+                                <p class="card-text">${phone.brand}</p>
+                            <div class='text-end'>
+                                <button class='custom-button' onclick="loadPhoneDetails('${phone.slug}')">View Details</button>  
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        `
-        resultsField.appendChild(div);
-    });
+            `
+            resultsField.appendChild(div);
+        });
+    }
+
 }
 
 // phone.slug problem was not loaded without inverted comma
@@ -53,6 +65,9 @@ const loadPhoneDetails = phoneId => {
 // displaying phone details
 
 const displayProductDetails = details => {
+    if(!details.releaseDate){
+        console.log(details.name)
+    }
     const productDetilsField = document.getElementById('phone-details')
     productDetilsField.textContent = '';
     const div = document.createElement('div');
@@ -64,7 +79,7 @@ const displayProductDetails = details => {
                     <div class="col-md-7">
                         <div class="card-body">
                             <h3 class="card-title fw-bold">${details.name}</h3>
-                            <p class="card-text"><small class="">${details.releaseDate}</small></p>
+                            <p class="card-text"><small class="">${details.releaseDate ? details.releaseDate:'Coming Soon'}</small></p>
                             <div>
                                 <h6 class="fw-bold">Specifications: </h6>
                                 <ul class="specifications m-0 p-0">
@@ -76,7 +91,6 @@ const displayProductDetails = details => {
                                         <p class="feature-title fw-bold">Display: <span class="details fw-light">${details.mainFeatures.displaySize} </span>
                                         </p>
                                     </li>
-                                    
                                     <li>
                                         <p class="feature-title fw-bold">Memory: <span class="details fw-light"> ${details.mainFeatures.memory}</span>
                                         </p>
