@@ -9,8 +9,10 @@
 
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&family=Titillium+Web:wght@400;600;700&display=swap"
+        rel="stylesheet">
     <!-- fontawesome link  -->
     <script src="https://kit.fontawesome.com/86ab201cc1.js" crossorigin="anonymous"></script>
 
@@ -22,23 +24,23 @@
 </head>
 
 <body>
-    <!-- header starts -->
     <header>
     </header>
-    <!-- header ends -->
 
     <main>
         <!-- search section starts  -->
         <section class="row my-5">
             <div class=" col-lg-3 col-12 text-center">
+                <!-- header starts -->
                 <header>
-                    <h3 class="">MOBILE PLANET</h3>
+                    <h3 class="company-name">MOBILE PLANET</h3>
                 </header>
+                <!-- header ends -->
             </div>
             <div class="col-lg-6 col-12 input-group mb-3 w-50 mx-auto">
-                <input type="text" class="form-control" placeholder="Find Your Phone"
-                    aria-label="Recipient's username" aria-describedby="button-addon2">
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search </button>
+                <input id="search-field" type="text" class="form-control" placeholder="Find Your Phone">
+                <button id="search" class="btn btn-outline-secondary" type="button" onclick="searchPhone()">Search
+                </button>
             </div>
             <div class=" col-lg-3 col-12">
                 <ul class="icons d-flex">
@@ -51,28 +53,8 @@
 
         <!-- product details starts -->
         <section>
-            <div class="card mb-3 mx-auto" style="max-width: 540px;">
-                <div id="phone-details" class="row g-0">
-                    <div class="col-md-4">
-                        <img src="..." class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h4 class="card-title fw-bold">phone name</h4>
-                            <p class="card-text"><small class="">Release date:</small></p>
-                            <div>
-                                <h6 class="fw-bold">Specifications: </h6>
-                                <ul class="specifications">
-                                    <li><p class="feature-title fw-bold">Chipset:<span class="details fw-light"> </span></p></li>
-                                    <li><p class="feature-title fw-bold">Memory:<span class="details fw-light"> </span></p></li>
-                                    <li><p class="feature-title fw-bold">Display:<span class="details fw-light"> </span></p></li>
-                                    <li><p class="feature-title fw-bold">Sensors:<span class="details fw-light"> </span></p></li>
-                                    <li><p class="feature-title fw-bold">Others:<span class="details fw-light"> </span></p></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div id="phone-details" class="card mb-3 mx-auto" style="max-width: 640px;">
+                
             </div>
         </section>
 
@@ -80,23 +62,9 @@
 
         <!-- search results starts -->
         <section>
-            <div id="display-phones" class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col">
-                    <div class="card h-100">
-                      <img src="..." class="card-img-top" alt="...">
-                      <div>
-                          <div class="card-body row">
-                              <div class="col-6">
-                                  <h4 class="card-title">Card title</h4>
-                                  <p class="card-text">brand name</p>
-                              </div>
-                              <div class="col-6">
-                                  <button >See Details</button>
-                              </div>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
+            <div id="display-phones" class="row row-cols-1 row-cols-md-3 g-4" >
+                
+            </div>
         </section>
         <!-- search results ends -->
     </main>
