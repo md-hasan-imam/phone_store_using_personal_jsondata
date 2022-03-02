@@ -12,22 +12,23 @@ const searchPhone = () => {
     fetch(url)
         .then(res => res.json())
         .then(data => displayResults(data.data))
-        
+
 }
 
 // showing results in display 
 
 const displayResults = phones => {
     const resultsField = document.getElementById('display-phones');
-    resultsField.textContent='';
-    if(phones.length == 0){
+    resultsField.textContent = '';
+    if (phones.length == 0) {
         const errorField = document.getElementById('error-message');
-        errorField.innerText="*** Opps! No result found. Please! Search Again ***";
-        errorField.style.color='tomato';
-        errorField.style.display="block"
-    }else{
+        errorField.innerText = "*** Opps! No result found. Please! Search Again ***";
+        errorField.style.color = 'tomato';
+        errorField.style.display = "block"
+    }    
+    else {
         const errorField = document.getElementById('error-message');
-        errorField.style.display="none";
+        errorField.style.display = "none";
         phones.forEach(phone => {
             const div = document.createElement('div');
             div.classList.add('col');
@@ -48,7 +49,6 @@ const displayResults = phones => {
             resultsField.appendChild(div);
         });
     }
-
 }
 
 // phone.slug problem was not loaded without inverted comma
@@ -65,9 +65,6 @@ const loadPhoneDetails = phoneId => {
 // displaying phone details
 
 const displayProductDetails = details => {
-    if(!details.releaseDate){
-        console.log(details.name)
-    }
     const productDetilsField = document.getElementById('phone-details')
     productDetilsField.textContent = '';
     const div = document.createElement('div');
@@ -95,6 +92,15 @@ const displayProductDetails = details => {
                                         <p class="feature-title fw-bold">Memory: <span class="details fw-light"> ${details.mainFeatures.memory}</span>
                                         </p>
                                     </li>
+                                    <li>
+                                        <p class="feature-title fw-bold">
+                                        Sensors:<span class="details fw-light"> ${details.mainFeatures.sensors[0]}, ${details.mainFeatures.sensors[2]}, ${details.mainFeatures.sensors[3]}, ${details.mainFeatures.sensors[4]}, ${details.mainFeatures.sensors[5]}</span>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p class="feature-title fw-bold">Others: <span class="details fw-light">${details.others.Bluetooth},</span>
+                                        </p>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -103,3 +109,5 @@ const displayProductDetails = details => {
     `
     productDetilsField.appendChild(div);
 }
+
+

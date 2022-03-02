@@ -22,6 +22,10 @@ ul{
     border-bottom-right-radius: 5px;
     border: 1px solid #cecdcd;
 }
+.icons i{
+    font-size: 27px;
+    padding: 12px 15px;
+}
 
 .input-group .btn:focus,#search-field {
     outline: none;
