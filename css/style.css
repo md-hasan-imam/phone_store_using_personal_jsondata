@@ -1,12 +1,16 @@
+/* common css starts */
 body{
     font-family: 'Poppins', sans-serif;
-    background-color: rgba(240, 248, 255, 0.267);
+    background-color: rgba(204, 231, 255, 0.356);
 }
 
 ul{
     list-style: none;
 }
 
+/* common css ends */
+
+/* header section css satarts  */
 .company-name{
     color: rgb(48, 95, 251);
     font-weight: 700;
@@ -20,7 +24,7 @@ ul{
     height: 40px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    border: 1px solid #cecdcd;
+    border: 1px solid #949494;
 }
 .icons i{
     font-size: 27px;
@@ -31,6 +35,10 @@ ul{
     outline: none;
     box-shadow: none;
 }
+
+/* header section css ends  */
+
+/* card section css starts */
 .feature-title{
     font-size: 16px;
 }
@@ -77,3 +85,7 @@ span{
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
+#phone-details{
+    display: none;
+}
+/* card section css ends */
