@@ -1,7 +1,10 @@
 /* common css starts */
 body{
     font-family: 'Poppins', sans-serif;
-    background-color: rgba(204, 231, 255, 0.356);
+    /* background-color: rgba(204, 231, 255, 0.356); */
+    background-image: url(../image/1.jpg);
+    background-position:inherit ;
+    background-size: cover;
 }
 
 ul{

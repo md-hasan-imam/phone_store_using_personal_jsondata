@@ -97,8 +97,7 @@ const displayProductDetails = details => {
                                         </p>
                                     </li>
                                     <li>
-                                        <p class="feature-title fw-bold">Others: <span class="details fw-light">${details?.others?.Bluetooth ? details.others.Bluetooth:'' } ${details?.others?.GPS  ? details.others.GPS:''}, ${details?.others?.Radio ? details.others.Radio:''}, ${details?.others?.USB ? details.others.USB:''}, ${details?.others?.WLAN ? details.others.WLAN:''} </span>
-                                        </p>
+                                    <h6>${details.data.others ? 'others ' : ""}</h6>
                                     </li>
                                 </ul>
                             </div>
